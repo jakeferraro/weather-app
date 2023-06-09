@@ -36,6 +36,19 @@ function displayResults(weather) {
 
     let hilow = document.querySelector('.hi-low');
     hilow.innerText = `${Math.round(weather.main.temp_min)}°f / ${Math.round(weather.main.temp_max)}°f`;
+
+    if(weather.weather[0].main === "Rain") {
+        document.body.style.backgroundImage = "url('rain.jpg')";
+    }
+    if(weather.weather[0].main === "Sunny" || weather.weather[0].main === "Clear") {
+        document.body.style.backgroundImage = "url('sunny.jpg')";
+    }
+    if(weather.weather[0].main === "Clouds") {
+        document.body.style.backgroundImage = "url('clouds.jpg')"
+    }
+    if(weather.weather[0].main === "Haze") {
+        document.body.style.backgroundImage = "url('hazy.jpeg')"
+    }
 }
 
 function dateBuilder(d) {
